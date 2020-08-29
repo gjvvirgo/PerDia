@@ -9,7 +9,7 @@ Created on Fri Mar  9 14:59:47 2018
 from PyQt5 import QtWidgets, QtGui, QtCore, uic
 
 import sys
-sys.path.insert(0,r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\BL')
+sys.path.insert(0,r'.\BL')
 
 from BL import bLogic
 
@@ -18,7 +18,7 @@ logic = bLogic()
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow,self).__init__()
-        uic.loadUi(r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\UI\mainwindow.ui',self)
+        uic.loadUi(r'.\UI\mainwindow.ui',self)
         self.setFixedSize(self.size())
         self.lineEdit.setMaxLength(4)
         self.pushButton.clicked.connect(self.showCalendar)
@@ -52,7 +52,7 @@ class MainWindow(QtWidgets.QMainWindow):
 class CalendarWindow(QtWidgets.QDialog):
     def __init__(self):
         super(CalendarWindow,self).__init__()
-        uic.loadUi(r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\UI\calendar.ui',self)
+        uic.loadUi(r'.\UI\calendar.ui',self)
         self.setFixedSize(self.size())
         self.pushButton.clicked.connect(self.createEntry)
         self.pushButton_3.clicked.connect(self.viewEntry)
@@ -110,7 +110,7 @@ class CalendarWindow(QtWidgets.QDialog):
 class ChangePinWindow(QtWidgets.QDialog):
     def __init__(self):
         super(ChangePinWindow,self).__init__()
-        uic.loadUi(r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\UI\changepin.ui',self)
+        uic.loadUi(r'.\UI\changepin.ui',self)
         self.lineEdit.setMaxLength(4)
         self.lineEdit_2.setMaxLength(4)
         self.lineEdit_3.setMaxLength(4)
@@ -166,7 +166,7 @@ class ChangePinWindow(QtWidgets.QDialog):
 class EntryWindow(QtWidgets.QDialog):
     def __init__(self,curr_date):
         super(EntryWindow,self).__init__()
-        uic.loadUi(r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\UI\entry.ui',self)
+        uic.loadUi(r'.\UI\entry.ui',self)
         self.setFixedSize(self.size())
         self.sel_date = curr_date
         self.photos = None
@@ -189,7 +189,7 @@ class EntryWindow(QtWidgets.QDialog):
         self.close()
     
     def addPhotoLogic(self):
-        self.photos = QtWidgets.QFileDialog.getOpenFileNames(None,"Open Image", "/home/Pictures", "Image Files (*.jpeg *.jpg)")
+        self.photos = QtWidgets.QFileDialog.getOpenFileNames(None,"Open Image", r".\Sample Pictures", "Image Files (*.jpeg *.jpg)")
         if len(self.photos[0]) != 0:
             self.showDialog('Photo(s) Added!','Success')
                 
@@ -202,7 +202,7 @@ class EntryWindow(QtWidgets.QDialog):
 class ViewWindow(QtWidgets.QDialog):
     def __init__(self,curr_date):
         super(ViewWindow,self).__init__()
-        uic.loadUi(r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\UI\view.ui',self)
+        uic.loadUi(r'.\UI\view.ui',self)
         self.sel_date = curr_date
         self.setFixedSize(self.size())
         self.setWindowTitle(curr_date)
@@ -231,7 +231,7 @@ class ViewWindow(QtWidgets.QDialog):
 class ViewPhotosWindow(QtWidgets.QDialog):
     def __init__(self,curr_date,inx):
         super(ViewPhotosWindow,self).__init__()
-        uic.loadUi(r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\UI\viewphotos.ui',self)
+        uic.loadUi(r'.\UI\viewphotos.ui',self)
         self.setFixedSize(self.size())
         
         if inx == 0:
@@ -280,7 +280,7 @@ class ViewPhotosWindow(QtWidgets.QDialog):
 class EditWindow(QtWidgets.QDialog):
     def __init__(self,curr_date):
         super(EditWindow,self).__init__()
-        uic.loadUi(r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\UI\edit.ui',self)
+        uic.loadUi(r'.\UI\edit.ui',self)
         self.setFixedSize(self.size())
         self.sel_date = curr_date
         self.setFixedSize(self.size())
@@ -304,7 +304,7 @@ class EditWindow(QtWidgets.QDialog):
         self.showDialog('All photos have been removed','Success!')
         
     def addPhotoLogic(self):
-        self.photos = QtWidgets.QFileDialog.getOpenFileNames(None,"Open Image", r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\Sample Pictures', "Image Files (*.jpeg *.jpg)")
+        self.photos = QtWidgets.QFileDialog.getOpenFileNames(None,"Open Image", r'.\Sample Pictures', "Image Files (*.jpeg *.jpg)")
         if len(self.photos[0]) != 0:
             self.showDialog('Photo(s) Added!','Success')
         else:
