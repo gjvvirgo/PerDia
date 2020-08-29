@@ -10,8 +10,7 @@ import sqlite3
 
 class DataBase:
     def __init__(self):
-        #CHANGE LOCATION /home/unixuser/Main_Form/DB/Journal.db ACCORDINGLY
-        self.database = sqlite3.connect(r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\DB\Journal.db') 
+        self.database = sqlite3.connect(r'.\DB\Journal.db') 
         self.cursor = self.database.cursor()
         self.createDBs()
     
@@ -119,9 +118,9 @@ class DataBase:
         return vals
 
 
-if __name__ == '__main__':
-    database = DataBase()
-    print (database.getData('Mar 18 2018'))
+#if __name__ == '__main__':
+#    database = DataBase()
+#    print (database.getData('Mar 18 2018'))
     
 
 
