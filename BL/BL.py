@@ -9,7 +9,7 @@ Created on Sat Mar 17 19:06:05 2018
 #from PyQt5 import QtCore, QtGui, QtWidgets, uic 
 #from UI import MainWindow, CalendarWindow, ChangePinWindow, EntryWindow, ViewWindow
 import sys
-sys.path.insert(0,r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\DB')
+sys.path.insert(0,r'.\DB')
 
 from User_Class import User
 from Date_Class import Date
