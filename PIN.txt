@@ -1,0 +1,1 @@
+PIN IS 1234 OR CHECK /DB/Journal.db
