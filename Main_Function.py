@@ -8,7 +8,7 @@ Created on Wed Mar 21 03:05:49 2018
 from PyQt5 import QtWidgets
 
 import sys
-sys.path.insert(0,r'F:\Program Files\Microsoft Visual Studio\Projects\PerDia\UI')
+sys.path.insert(0,r'.\UI')
 
 from UI import MainWindow
 
