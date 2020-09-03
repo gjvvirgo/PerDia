@@ -1,6 +1,6 @@
 # PerDia
 PerDia or Personal Diary was created for a client that wanted a personal and secure way of writing her thoughts in a program.
-The program is made using the Python Programming Languange, QtCreator for its UI, and SQLite for storage
+The program is made using the Python Programming Language, QtCreator for its UI, and SQLite for storage
 
 It is divided into 3 major parts:
 
